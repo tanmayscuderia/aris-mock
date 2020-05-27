@@ -1,0 +1,187 @@
+<header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+                aria-label="Close">close</button>
+            <span class="mdc-top-app-bar__title animated animatedFadeInUp fadeInUp">Aris</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <!-- <span class="mdc-top-app-bar__title" href="#imageList">Image</span>
+            <span class="mdc-top-app-bar__title" href="cardList">Cards</span>
+            <span class="mdc-top-app-bar__title" href="graphList">D3</span> -->
+            <a class="mdc-top-app-bar__title animated animatedFadeInUp fadeInUp" data-toggle="navbar"
+                href="#imageList">Image</a>
+            <a class="mdc-top-app-bar__title animated animatedFadeInUp fadeInUp" data-toggle="navbar"
+                href="#cardList">Cards</a>
+            <a class="mdc-top-app-bar__title animated animatedFadeInUp fadeInUp" data-toggle="navbar"
+                href="#graphList">D3</a>
+            <!-- <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                aria-label="Share">share</button>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                aria-label="Delete">delete</button>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                aria-label="Open menu">more_vert</button> -->
+        </section>
+    </div>
+</header>
+
+<body>
+    <section id="imageList">
+        <ul class="mdc-image-list my-image-list">
+            <li class="mdc-image-list__item">
+                <div class="mdc-image-list__image-aspect-container animated animatedFadeInUp fadeInUp">
+                    <img class="mdc-image-list__image"
+                        src="https://www.arisglobal.com/wp-content/uploads/2020/04/Clinical-Webinar-Carousel-BG.jpg">
+                    <!-- <div class="animated animatedFadeInUp fadeInUp">
+                    <h1>Press Release</h1>
+                </div>
+                <div class="animated animatedFadeInUp fadeInUp">
+                    <h2>Search</h2>
+                    <p>Know what you want to listen to? Just search and hit play.</p>
+                </div> -->
+                </div>
+                <!-- <div class="mdc-image-list__supporting">
+                <span class="mdc-image-list__label">Text label</span>
+            </div> -->
+            </li>
+        </ul>
+        <!-- <div class="owl-controls material-controls">
+        <div class="owl-nav">
+            <a class="btn-floating btn-large waves-effect grey lighten-2 owl-prev" title=""><i
+                    class="material-icons">arrow_back</i></a>
+            <a class="btn-floating btn-large waves-effect grey lighten-2 owl-next" title=""><i
+                    class="material-icons">arrow_forward</i></a>
+        </div>
+    </div> -->
+
+    </section>
+    <section id="cardList" *ngIf="cardData">
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell">
+                    <div class="mdc-card" (click)="gridCardClicked(0)">
+                        <div class="mdc-card__primary-action">
+                            <div class="mdc-card__media mdc-card__media--square">
+                                <div class="mdc-card__media-content">
+                                    <p>{{cardData[0].description}}</p>
+                                    <div class="demo-card__primary">
+                                        <h2 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">
+                                            {{cardData[0].writer}}
+                                            <br>{{cardData[0].position}}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ... additional primary action content ... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-layout-grid__cell">
+                    <div class="mdc-card" (click)="gridCardClicked(1)">
+                        <div class="mdc-card__primary-action">
+                            <div class="mdc-card__media mdc-card__media--square">
+                                <div class="mdc-card__media-content">
+                                    <p>{{cardData[1].description}}</p>
+                                    <div class="demo-card__primary">
+                                        <h2 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">
+                                            {{cardData[1].writer}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ... additional primary action content ... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-layout-grid__cell">
+                    <div class="mdc-card" (click)="gridCardClicked(2)">
+                        <div class="mdc-card__primary-action">
+                            <div class="mdc-card__media mdc-card__media--square">
+                                <div class="mdc-card__media-content">
+                                    <!-- <p>“We have seen how the LifeSphere platform’s advanced
+                                        robotic automation and cognitive features will allow us to automate
+                                        many of our key PV steps in the area of case processing, which are currently
+                                        resource
+                                        intensive”</p> -->
+                                    <p>{{cardData[2].description}}</p>
+                                    <div class="demo-card__primary">
+                                        <h2 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">
+                                            {{cardData[2].writer}}
+                                            <br>
+                                            {{cardData[2].position}}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ... additional primary action content ... -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="graphList">
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell--span-6">
+                    <div class="mdc-card animated animatedFadeInUp fadeInUp">
+                        <div class="mdc-card__primary-action" (click)="graphClicked()">
+                            <div class="mdc-card__media mdc-card__media--square">
+                                <div class="mdc-card__media-content" id="svgCard">
+                                    <app-pie [data]="pieData.data"></app-pie>
+                                </div>
+                            </div>
+                            <!-- ... additional primary action content ... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="mdc-layout-grid__cell--span-6">
+                    <div class="mdc-card animated animatedFadeInUp fadeInUp">
+                        <div class="mdc-card__primary-action">
+                            <div class="mdc-card__media mdc-card__media--square">
+                                <div class="mdc-card__media-content">
+                                    <app-bar #barCt [data]="chartData"></app-bar>
+                                </div>
+                            </div>
+                            <!-- ... additional primary action content ... -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<div [formGroup]="editFormGroup">
+    <ng-template #editDig let-data>
+        <!-- <h1 mat-dialog-title>Dialog with elements</h1> -->
+        <!-- <div mat-dialog-content [formGroup]="editFormGroup">
+            <textarea matInput formControlName="description" cdkTextareaAutosize></textarea>
+        </div> -->
+        <mat-dialog-content>
+            <textarea matInput formControlName="description" cdkTextareaAutosize></textarea>
+        </mat-dialog-content>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onEditDigClick(false)">Cancel</button>
+            <button mat-raised-button color="primary" (click)="onEditDigClick(true)">Update</button>
+        </div>
+    </ng-template>
+</div>
+
+<div [formGroup]="graphFormGroup">
+    <ng-template #graphDig let-data>
+        <!-- <h1 mat-dialog-title>Dialog with elements</h1> -->
+        <!-- <div mat-dialog-content [formGroup]="editFormGroup">
+            <textarea matInput formControlName="description" cdkTextareaAutosize></textarea>
+        </div> -->
+        <mat-dialog-content>
+            <mat-form-field class="pieInput">
+                <mat-label>Pie Data Inputs</mat-label>
+                <input matInput formControlName="data">
+            </mat-form-field>
+        </mat-dialog-content>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onGraphDigClick(false)">Cancel</button>
+            <button mat-raised-button color="primary" (click)="onGraphDigClick(true)">Update</button>
+        </div>
+    </ng-template>
+</div>
