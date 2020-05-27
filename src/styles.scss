@@ -1,0 +1,22 @@
+// @use '@material/button/mdc-button';
+// @use '@material/button';
+// @use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/image-list";
+@use "@material/card";
+@use "../node_modules/material-components-web/material-components-web.scss";
+@use "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@include card.core-styles;
+
+@font-face {
+    font-family: "myFont";
+    src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+.my-image-list {
+    @include image-list.standard-columns(1);
+}
+
+html {
+    font-family: "myFont", "Bitstream Vera Serif", serif;
+    scroll-behavior: smooth;
+}
